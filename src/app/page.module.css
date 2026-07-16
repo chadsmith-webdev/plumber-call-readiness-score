@@ -1,0 +1,260 @@
+.main {
+  width: min(100% - 32px, var(--max-width-content));
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100vh - 112px);
+  padding: 48px 0 80px;
+}
+
+.eyebrow,
+.kicker {
+  margin: 0 0 14px;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2,
+.final h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  font-size: clamp(2.7rem, 7vw, 5.5rem);
+  line-height: 0.96;
+}
+
+.heroCopy {
+  max-width: 64ch;
+  margin: 24px 0 0;
+  color: var(--color-text-secondary);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.reassurance {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.scorePanel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: linear-gradient(180deg, var(--color-surface-raised), var(--color-surface));
+  padding: 28px;
+}
+
+.scoreTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  color: var(--color-text-muted);
+}
+
+.scoreNumber {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.scoreNumber span {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+}
+
+.barList {
+  display: grid;
+  gap: 14px;
+}
+
+.barRow {
+  display: grid;
+  gap: 8px;
+}
+
+.barRow div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.barTrack {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #262626;
+}
+
+.barFill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-accent);
+}
+
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.sectionHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.section h2,
+.final h2 {
+  max-width: 15ch;
+  font-size: clamp(1.9rem, 4vw, 3.25rem);
+  line-height: 1.05;
+}
+
+.sectionHeader p,
+.copyBlock p,
+.final p {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.grid,
+.categoryGrid,
+.steps,
+.faqList {
+  display: grid;
+  gap: 16px;
+}
+
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.categoryGrid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.card,
+.category,
+.step,
+.faqItem {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: rgba(20, 20, 20, 0.84);
+  padding: 22px;
+}
+
+.card {
+  min-height: 130px;
+}
+
+.card strong,
+.category h3,
+.step strong,
+.faqItem h3 {
+  color: var(--color-text-primary);
+}
+
+.category h3,
+.faqItem h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+
+.category p,
+.step p,
+.faqItem p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.steps {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step strong {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-accent);
+}
+
+.copyBlock {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.final {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+  padding: 80px 0 96px;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .sectionHeader,
+  .copyBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryGrid,
+  .grid,
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    width: min(100% - 24px, var(--max-width-content));
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 24px;
+  }
+
+  .categoryGrid,
+  .grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .heroActions a {
+    width: 100%;
+  }
+}

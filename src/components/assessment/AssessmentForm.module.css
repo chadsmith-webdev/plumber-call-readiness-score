@@ -1,0 +1,209 @@
+.shell {
+  display: grid;
+  gap: 20px;
+}
+
+.progressText {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.progressTrack {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #262626;
+}
+
+.progressTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-accent);
+  transition: width 180ms ease;
+}
+
+.form,
+.stepPanel {
+  display: grid;
+  gap: 24px;
+}
+
+.stepPanel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: rgba(20, 20, 20, 0.88);
+  padding: 28px;
+}
+
+.stepPanel h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label,
+.optionGroup legend {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.field input {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: #0f0f0f;
+  color: var(--color-text-primary);
+  padding: 0 12px;
+}
+
+.field input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.optionGroup {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.radioOption,
+.checkOption,
+.consent {
+  display: flex;
+  min-height: 44px;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: #101010;
+  color: var(--color-text-secondary);
+  padding: 12px;
+}
+
+.radioOption:has(input:checked),
+.checkOption:has(input:checked),
+.consent:has(input:checked) {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.radioOption input,
+.checkOption input,
+.consent input {
+  min-width: 18px;
+  margin-top: 3px;
+  accent-color: var(--color-accent);
+}
+
+.optionGroup:disabled {
+  opacity: 0.55;
+}
+
+.notice {
+  border-left: 3px solid var(--color-accent);
+  color: var(--color-text-secondary);
+  padding-left: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 46px;
+  border-radius: var(--radius-small);
+  padding: 0 18px;
+  font-weight: 700;
+}
+
+.primaryButton {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #071018;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.errorSummary {
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-medium);
+  background: rgba(216, 137, 137, 0.11);
+  padding: 18px;
+}
+
+.errorSummary h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.errorSummary ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.fieldError {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 0.9rem;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+@media (max-width: 760px) {
+  .fieldGrid,
+  .optionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stepPanel {
+    padding: 20px;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

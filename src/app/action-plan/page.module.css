@@ -1,0 +1,128 @@
+.main,
+.simpleMain {
+  width: min(100% - 32px, var(--max-width-content));
+  margin: 0 auto;
+  padding: 48px 0 96px;
+}
+
+.hero,
+.section,
+.final {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: rgba(20, 20, 20, 0.88);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.32fr);
+  gap: 32px;
+  align-items: center;
+  padding: 36px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2,
+.final h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 14ch;
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  line-height: 1;
+}
+
+.hero p,
+.section p,
+.final p,
+.list li {
+  color: var(--color-text-secondary);
+}
+
+.price {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: #0f0f0f;
+  text-align: center;
+}
+
+.price strong {
+  display: block;
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.section,
+.final {
+  display: grid;
+  gap: 22px;
+  margin-top: 24px;
+  padding: 28px;
+}
+
+.section h2,
+.final h2 {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: #101010;
+  padding: 18px;
+}
+
+.compare,
+.scope {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.list li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 820px) {
+  .hero,
+  .compare,
+  .scope,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .main,
+  .simpleMain {
+    width: min(100% - 24px, var(--max-width-content));
+  }
+}
